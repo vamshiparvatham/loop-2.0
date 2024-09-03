@@ -1,0 +1,23 @@
+export default[
+    {
+        imageUrl:'https://img.freepik.com/free-vector/background-minimalist-gradient-colorful-style_483537-3447.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-photo/abstract-background-with-red-lines_1361-3531.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-vector/blue-white-low-poly-triangle-shapes-background_1035-19007.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-photo/abstract-colorful-splash-3d-background-generative-ai-background_60438-2494.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-vector/gradient-geometric-background_23-2148807709.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-vector/flat-design-abstract-background_23-2149103999.jpg?semt=ais_hybrid'
+    },
+    {
+        imageUrl:'https://img.freepik.com/free-vector/abstract-futuristic-wallpaper_23-2148399591.jpg?semt=ais_hybrid'
+    },
+];
