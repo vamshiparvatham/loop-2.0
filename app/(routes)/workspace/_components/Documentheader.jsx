@@ -37,7 +37,7 @@ function Documentheader({ params }) {
             <DialogHeader>
               <DialogTitle>Share link</DialogTitle>
               <DialogDescription>
-                Anyone who has this link will be able to view this.
+                Anyone who has this link will be able to view this and edit the documents.
               </DialogDescription>
             </DialogHeader>
             <div className="flex items-center space-x-2">
@@ -47,7 +47,7 @@ function Documentheader({ params }) {
                 </Label>
                 <Input
                   id="link"
-                  defaultValue={"localhost:3000/workspace/" + params?.workspaceId + "/" + params?.documentId}
+                  defaultValue={"https://loop-2-0-1.vercel.app/workspace/" + params?.workspaceId + "/" + params?.documentId}
                   readOnly
                 />
               </div>
