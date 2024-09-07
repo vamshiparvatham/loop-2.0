@@ -10,17 +10,20 @@ import { LoaderPinwheel, SmilePlus } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
-import uuid4 from 'uuid4'
+import { v4 as uuidv4 } from 'uuid';
+
 
 const page = () => {
     const [coverpage, Setcoverpage] = useState('/coverpage.jpeg')
-    const [workspaceName, setworkspaceName] = useState();
+    const [workspaceName, setworkspaceName] = useState('');
     const [emoji,setEmoji] = useState();
     const [loading, setloading] = useState(false);
     const router = useRouter();
 
     const {user} = useUser();
     const {orgId} = useAuth();
+    console.log(user?.primaryEmailAddress?.emailAddress)
+    console.log(orgId)
 
     const onCoverChange = async()=>{
         setloading(true);
@@ -34,7 +37,7 @@ const page = () => {
             id:workspaceId,
             orgId:orgId?orgId:user?.primaryEmailAddress?.emailAddress,
         });
-        const docId = uuid4();
+        const docId = uuidv4();
         await setDoc(doc(db,'DocumentId',docId.toString()),{
             DocumentName:"Untitled", 
             workspaceId:workspaceId,
@@ -58,7 +61,8 @@ const page = () => {
         <CoverPicker setNewCover={(v)=>{Setcoverpage(v)}}>
             <div className='relative group cursor-pointer'>
                 <h2 className='hidden absolute p-2 w-full h-full group-hover:flex items-center justify-center font-bold'>Cover page</h2>
-                <Image src= {coverpage} width={400} height={300} 
+                <Image src= {coverpage} width={400} height={300}
+                    alt="Cover Page" 
                     className='group-hover:opacity-45 w-full h-[250px] rounded-t-xl
                     object-cover'/>
             </div>

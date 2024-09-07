@@ -10,7 +10,6 @@ function page({params}) {
     useEffect(()=>{
         // console.log(params);
     },[params])
-    console.log(params);
   return (
     
       <Room params = {params}>

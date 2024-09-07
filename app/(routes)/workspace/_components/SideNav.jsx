@@ -6,14 +6,14 @@ import { collection, doc, onSnapshot, query, setDoc, where } from 'firebase/fire
 import { Bell, Loader2Icon } from 'lucide-react'
 import React, { useEffect, useState } from 'react'
 import DocumentList from './DocumentList';
-import uuid4 from 'uuid4';
+import { v4 as uuidv4 } from 'uuid';
 import { useRouter } from 'next/navigation';
 import { useUser } from '@clerk/nextjs';
 
 import { Progress } from "@/components/ui/progress"
 import { toast } from 'sonner';
 import NotificationBox from './NotificationBox';
-import { LiveblocksProvider } from '@liveblocks/react';
+
 
 function SideNav({params}) {
     const workspaceId = params?.workspaceId;
@@ -55,7 +55,7 @@ function SideNav({params}) {
         }
         setloading(true);
         
-        const docId = uuid4();
+        const docId = uuidv4();
         
         await setDoc(doc(db,'DocumentId',docId.toString()),{
             DocumentName:"Untitled", 

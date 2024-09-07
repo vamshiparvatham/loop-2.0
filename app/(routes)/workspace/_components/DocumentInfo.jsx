@@ -24,7 +24,7 @@ function DocumentInfo({params}) {
         const docSnap = await getDoc(docRef);
         
         if(docSnap.exists()){
-            console.log(docSnap.data());
+            
             setDocumentInfo(docSnap.data());
             setEmoji(docSnap.data()?.emoji);
             docSnap.data()?.coverImage&&Setcoverpage(docSnap.data()?.coverImage);
